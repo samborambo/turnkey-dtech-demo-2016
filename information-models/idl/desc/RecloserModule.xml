@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<types xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="/home/devans/rti/rti_connext_dds-5.2.0/bin/../resource/app/app_support/rtiddsgen/schema/rti_dds_topic_types.xsd">
+<include file="CommonModule.xml"/>
+<module name="openfmb">
+  <module name="reclosermodule">
+    <struct name= "Recloser" baseType="openfmb::commonmodule::IdentifiedObject" topLevel="false">
+      <member name="normalOpen" id="3" type="boolean"/>
+    </struct>
+    <struct name= "RecloserControl" baseType="openfmb::commonmodule::EndDeviceControl" topLevel="false">
+      <member name="__dummy_prevent_empty_class" id="5" type="octet"/>
+    </struct>
+    <struct name= "RecloserControlProfile" baseType="openfmb::commonmodule::Container">
+      <member name="recloser" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::reclosermodule::Recloser"/>
+      <member name="recloserControl" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::reclosermodule::RecloserControl"/>
+    </struct>
+    <struct name= "RecloserStatus" baseType="openfmb::commonmodule::Status" topLevel="false">
+      <member name="isBlocked" id="3" type="boolean"/>
+      <member name="switchStatus" id="4" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::SwitchStatusKind"/>
+    </struct>
+    <struct name= "RecloserEventProfile" baseType="openfmb::commonmodule::Container">
+      <member name="recloser" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::reclosermodule::Recloser"/>
+      <member name="recloserStatus" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::reclosermodule::RecloserStatus"/>
+    </struct>
+    <const name="MaxLengthRecloserReadings" type="unsignedLong" value="100"/>
+    <typedef name="SequenceOfRecloserReadings" sequenceMaxLength="openfmb::reclosermodule::MaxLengthRecloserReadings" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::Reading"/>
+    <struct name= "RecloserReadingProfile" baseType="openfmb::commonmodule::Container">
+      <member name="recloser" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::reclosermodule::Recloser"/>
+      <member name="readings" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::reclosermodule::SequenceOfRecloserReadings"/>
+    </struct>
+  </module>
+</module>
+</types>

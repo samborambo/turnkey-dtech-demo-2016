@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<types xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="/home/devans/rti/rti_connext_dds-5.2.0/bin/../resource/app/app_support/rtiddsgen/schema/rti_dds_topic_types.xsd">
+<include file="CommonModule.xml"/>
+<module name="openfmb">
+  <module name="loadmodule">
+    <struct name= "EnergyConsumer" baseType="openfmb::commonmodule::IdentifiedObject" topLevel="false">
+      <member name="operatingLimit" id="3" type="string"/>
+    </struct>
+    <struct name= "LoadControl" baseType="openfmb::commonmodule::EndDeviceControl" topLevel="false">
+      <member name="__dummy_prevent_empty_class" id="5" type="octet"/>
+    </struct>
+    <struct name= "LoadControlProfile" baseType="openfmb::commonmodule::Container">
+      <member name="energyConsumer" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::loadmodule::EnergyConsumer"/>
+      <member name="loadControl" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::loadmodule::LoadControl"/>
+    </struct>
+    <struct name= "LoadForecastProfile" baseType="openfmb::commonmodule::Container">
+      <member name="energyConsumer" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::loadmodule::EnergyConsumer"/>
+      <member name="forecastSchedule" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::ForecastSchedule"/>
+    </struct>
+    <const name="MaxLengthLoadReadings" type="unsignedLong" value="100"/>
+    <typedef name="SequenceOfLoadReadings" sequenceMaxLength="openfmb::loadmodule::MaxLengthLoadReadings" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::Reading"/>
+    <struct name= "LoadReadingProfile" baseType="openfmb::commonmodule::Container">
+      <member name="energyConsumer" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::loadmodule::EnergyConsumer"/>
+      <member name="readings" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::loadmodule::SequenceOfLoadReadings"/>
+    </struct>
+    <const name="MaxLengthLoadMeasurements" type="unsignedLong" value="100"/>
+    <typedef name="SequenceOfLoadMeasurements" sequenceMaxLength="openfmb::loadmodule::MaxLengthLoadMeasurements" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::StringMeasurement"/>
+    <struct name= "LoadStatusProfile" baseType="openfmb::commonmodule::Container">
+      <member name="energyConsumer" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::loadmodule::EnergyConsumer"/>
+      <member name="measurements" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::loadmodule::SequenceOfLoadMeasurements"/>
+    </struct>
+  </module>
+</module>
+</types>

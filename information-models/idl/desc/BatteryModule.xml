@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<types xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="/home/devans/rti/rti_connext_dds-5.2.0/bin/../resource/app/app_support/rtiddsgen/schema/rti_dds_topic_types.xsd">
+<include file="CommonModule.xml"/>
+<module name="openfmb">
+  <module name="batterymodule">
+    <struct name= "BatterySystem" baseType="openfmb::commonmodule::IdentifiedObject" topLevel="false">
+      <member name="__dummy_prevent_empty_class" id="3" type="octet"/>
+    </struct>
+    <struct name= "BatterySystemControl" baseType="openfmb::commonmodule::EndDeviceControl" topLevel="false">
+      <member name="isIslanded" id="5" type="boolean"/>
+    </struct>
+    <struct name= "BatteryControlProfile" baseType="openfmb::commonmodule::Container">
+      <member name="batterySystem" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::batterymodule::BatterySystem"/>
+      <member name="batterySystemControl" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::batterymodule::BatterySystemControl"/>
+    </struct>
+    <struct name= "BatteryStatus" baseType="openfmb::commonmodule::Status" topLevel="false">
+      <member name="isCharging" id="3" type="boolean"/>
+      <member name="isConnected" id="4" type="boolean"/>
+      <member name="mode" id="5" type="string"/>
+      <member name="stateOfCharge" id="6" type="float"/>
+    </struct>
+    <struct name= "BatteryEventProfile" baseType="openfmb::commonmodule::Container">
+      <member name="batteryStatus" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::batterymodule::BatteryStatus"/>
+      <member name="batterySystem" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::batterymodule::BatterySystem"/>
+    </struct>
+    <const name="MaxLengthBatteryReadings" type="unsignedLong" value="100"/>
+    <typedef name="SequenceOfBatteryReadings" sequenceMaxLength="openfmb::batterymodule::MaxLengthBatteryReadings" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::Reading"/>
+    <struct name= "BatteryReadingProfile" baseType="openfmb::commonmodule::Container">
+      <member name="batterySystem" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::batterymodule::BatterySystem"/>
+      <member name="readings" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::batterymodule::SequenceOfBatteryReadings"/>
+    </struct>
+  </module>
+</module>
+</types>

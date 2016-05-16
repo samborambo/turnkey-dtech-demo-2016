@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<types xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="/home/devans/rti/rti_connext_dds-5.2.0/bin/../resource/app/app_support/rtiddsgen/schema/rti_dds_topic_types.xsd">
+<include file="CommonModule.xml"/>
+<module name="openfmb">
+  <module name="interchangemodule">
+    <struct name= "MarketFactors" topLevel="false">
+      <member name="intervalEndTime" id="0" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::DateTimeType"/>
+      <member name="intervalStartTime" id="1" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::DateTimeType"/>
+    </struct>
+    <struct name= "MarketRun" topLevel="false">
+      <member name="executionType" id="0" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::ExecutionTypeKind"/>
+      <member name="marketEndTime" id="1" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::DateTimeType"/>
+      <member name="marketID" id="2" type="string"/>
+      <member name="marketRunID" id="3" type="string"/>
+      <member name="marketStartTime" id="4" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::DateTimeType"/>
+      <member name="marketType" id="5" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::MarketTypeKind"/>
+    </struct>
+    <const name="MaxLengthMarketFactors" type="unsignedLong" value="100"/>
+    <typedef name="SequenceOfMarketFactors" sequenceMaxLength="openfmb::interchangemodule::MaxLengthMarketFactors" type="nonBasic"  nonBasicTypeName= "openfmb::interchangemodule::MarketFactors"/>
+    <const name="MaxLengthMarketRuns" type="unsignedLong" value="100"/>
+    <typedef name="SequenceOfMarketRuns" sequenceMaxLength="openfmb::interchangemodule::MaxLengthMarketRuns" type="nonBasic"  nonBasicTypeName= "openfmb::interchangemodule::MarketRun"/>
+    <struct name= "Market" baseType="openfmb::commonmodule::IdentifiedObject" topLevel="false">
+      <member name="actualEnd" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::DateTimeType"/>
+      <member name="actualStart" id="4" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::DateTimeType"/>
+      <member name="dst" id="5" type="boolean"/>
+      <member name="end" id="6" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::DateTimeType"/>
+      <member name="localTimeZone" id="7" type="string"/>
+      <member name="start" id="8" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::DateTimeType"/>
+      <member name="status" id="9" type="string"/>
+      <member name="timeIntervalLength" id="10" type="float"/>
+      <member name="tradingDay" id="11" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::DateTimeType"/>
+      <member name="tradingPeriod" id="12" type="string"/>
+      <member name="marketFactors" id="13" type="nonBasic"  nonBasicTypeName= "openfmb::interchangemodule::SequenceOfMarketFactors"/>
+      <member name="marketRuns" id="14" type="nonBasic"  nonBasicTypeName= "openfmb::interchangemodule::SequenceOfMarketRuns"/>
+    </struct>
+    <struct name= "OptimizedMicroGridMarket" baseType="openfmb::interchangemodule::Market" topLevel="false">
+      <member name="__dummy_prevent_empty_class" id="15" type="octet"/>
+    </struct>
+    <struct name= "InterchangeSchedule" baseType="openfmb::commonmodule::Curve" topLevel="false">
+      <member name="directionType" id="13" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::InterTieDirectionKind"/>
+      <member name="energyType" id="14" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::MarketProductTypeKind"/>
+      <member name="intervalLength" id="15" type="long"/>
+      <member name="scheduleType" id="16" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::EnergyProductTypeKind"/>
+      <member name="optimizedMicroGridMarket" id="17" type="nonBasic"  nonBasicTypeName= "openfmb::interchangemodule::OptimizedMicroGridMarket"/>
+    </struct>
+    <struct name= "InterchangeScheduleProfile" baseType="openfmb::commonmodule::Container">
+      <member name="interchangeSchedule" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::interchangemodule::InterchangeSchedule"/>
+      <member name="powerSystemResource" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::PowerSystemResource"/>
+    </struct>
+  </module>
+</module>
+</types>

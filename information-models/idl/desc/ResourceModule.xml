@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<types xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="/home/devans/rti/rti_connext_dds-5.2.0/bin/../resource/app/app_support/rtiddsgen/schema/rti_dds_topic_types.xsd">
+<include file="CommonModule.xml"/>
+<module name="openfmb">
+  <module name="resourcemodule">
+    <const name="MaxLengthResourceReadings" type="unsignedLong" value="100"/>
+    <typedef name="SequenceOfResourceReadings" sequenceMaxLength="openfmb::resourcemodule::MaxLengthResourceReadings" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::Reading"/>
+    <struct name= "ResourceReadingProfile" baseType="openfmb::commonmodule::Container">
+      <member name="meter" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::Meter"/>
+      <member name="readings" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::resourcemodule::SequenceOfResourceReadings"/>
+    </struct>
+    <const name="MaxLengthResourceStatusMeasurements" type="unsignedLong" value="100"/>
+    <typedef name="SequenceOfResourceStatusMeasurements" sequenceMaxLength="openfmb::resourcemodule::MaxLengthResourceStatusMeasurements" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::StringMeasurement"/>
+    <struct name= "ResourceStatusProfile" baseType="openfmb::commonmodule::Container">
+      <member name="powerSystemResource" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::PowerSystemResource"/>
+      <member name="measurements" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::resourcemodule::SequenceOfResourceStatusMeasurements"/>
+    </struct>
+  </module>
+</module>
+</types>
