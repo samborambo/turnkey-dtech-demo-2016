@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<types xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="/home/devans/rti/rti_connext_dds-5.2.0/bin/../resource/app/app_support/rtiddsgen/schema/rti_dds_topic_types.xsd">
+<include file="CommonModule.xml"/>
+<module name="openfmb">
+  <module name="solarmodule">
+    <struct name= "SolarCapability" topLevel="false">
+      <member name="ahrRtg" id="0" type="float"/>
+      <member name="qualityFlag" id="1" type="string"/>
+      <member name="timestamp" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::DateTimeType"/>
+      <member name="voltage" id="3" type="float"/>
+      <member name="wRtgMaxVal" id="4" type="float"/>
+      <member name="wRtgMinVal" id="5" type="float"/>
+    </struct>
+    <struct name= "SolarInverter" baseType="openfmb::commonmodule::IdentifiedObject" topLevel="false">
+      <member name="__dummy_prevent_empty_class" id="3" type="octet"/>
+    </struct>
+    <struct name= "SolarInverterStatus" baseType="openfmb::commonmodule::Status" topLevel="false">
+      <member name="isConnected" id="3" type="boolean"/>
+    </struct>
+    <struct name= "SolarCapabilityProfile" baseType="openfmb::commonmodule::Container">
+      <member name="solarCapability" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::solarmodule::SolarCapability"/>
+      <member name="solarInverter" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::solarmodule::SolarInverter"/>
+    </struct>
+    <struct name= "SolarControl" baseType="openfmb::commonmodule::EndDeviceControl" topLevel="false">
+      <member name="isIslanded" id="5" type="boolean"/>
+    </struct>
+    <struct name= "SolarControlProfile" baseType="openfmb::commonmodule::Container">
+      <member name="solarControl" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::solarmodule::SolarControl"/>
+      <member name="solarInverter" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::solarmodule::SolarInverter"/>
+    </struct>
+    <struct name= "SolarEventProfile" baseType="openfmb::commonmodule::Container">
+      <member name="solarInverter" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::solarmodule::SolarInverter"/>
+      <member name="solarInverterStatus" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::solarmodule::SolarInverterStatus"/>
+    </struct>
+    <struct name= "SolarForecastProfile" baseType="openfmb::commonmodule::Container">
+      <member name="forecastSchedule" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::ForecastSchedule"/>
+      <member name="solarInverter" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::solarmodule::SolarInverter"/>
+    </struct>
+    <const name="MaxLengthSolarReadings" type="unsignedLong" value="100"/>
+    <typedef name="SequenceOfSolarReadings" sequenceMaxLength="openfmb::solarmodule::MaxLengthSolarReadings" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::Reading"/>
+    <struct name= "SolarReadingProfile" baseType="openfmb::commonmodule::Container">
+      <member name="readings" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::solarmodule::SequenceOfSolarReadings"/>
+      <member name="solarInverter" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::solarmodule::SolarInverter"/>
+    </struct>
+  </module>
+</module>
+</types>

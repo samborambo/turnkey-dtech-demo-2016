@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<types xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="/home/devans/rti/rti_connext_dds-5.2.0/bin/../resource/app/app_support/rtiddsgen/schema/rti_dds_topic_types.xsd">
+<module name="openfmb">
+  <module name="commonmodule">
+    <typedef name="UuidType" type="string"/>
+    <typedef name="DateTimeType" type="longLong"/>
+    <struct name= "HexBinary16Type" topLevel="false">
+      <member name="data" id="0" type="octet" arrayDimensions="2"/>
+    </struct>
+    <enum name="UnitMultiplierKind">
+      <enumerator name="centi"/>
+      <enumerator name="deci"/>
+      <enumerator name="Giga"/>
+      <enumerator name="kilo"/>
+      <enumerator name="Mega"/>
+      <enumerator name="milli"/>
+      <enumerator name="micro"/>
+      <enumerator name="nano"/>
+      <enumerator name="noMultiplier"/>
+      <enumerator name="pico"/>
+      <enumerator name="Tera"/>
+    </enum> 
+    <enum name="UnitSymbolKind">
+      <enumerator name="Amp"/>
+      <enumerator name="deg"/>
+      <enumerator name="degC"/>
+      <enumerator name="degF"/>
+      <enumerator name="Farad"/>
+      <enumerator name="gram"/>
+      <enumerator name="hour"/>
+      <enumerator name="Henry"/>
+      <enumerator name="Hz"/>
+      <enumerator name="Joule"/>
+      <enumerator name="meter"/>
+      <enumerator name="m2"/>
+      <enumerator name="m3"/>
+      <enumerator name="min"/>
+      <enumerator name="mph"/>
+      <enumerator name="Newton"/>
+      <enumerator name="noUnit"/>
+      <enumerator name="ohm"/>
+      <enumerator name="Pa"/>
+      <enumerator name="rad"/>
+      <enumerator name="Siemens"/>
+      <enumerator name="sec"/>
+      <enumerator name="V"/>
+      <enumerator name="VA"/>
+      <enumerator name="VAh"/>
+      <enumerator name="VAr"/>
+      <enumerator name="VArh"/>
+      <enumerator name="W"/>
+      <enumerator name="Wh"/>
+      <enumerator name="WPerM2"/>
+      <enumerator name="wPerVA"/>
+    </enum> 
+    <enum name="FlowDirectionKind">
+      <enumerator name="forward"/>
+      <enumerator name="lagging"/>
+      <enumerator name="leading"/>
+      <enumerator name="net"/>
+      <enumerator name="noDirection"/>
+      <enumerator name="q1minusQ4"/>
+      <enumerator name="q1plusQ2"/>
+      <enumerator name="q1plusQ3"/>
+      <enumerator name="q1plusQ4"/>
+      <enumerator name="q2minusQ3"/>
+      <enumerator name="q2plusQ3"/>
+      <enumerator name="q2plusQ4"/>
+      <enumerator name="q3minusQ2"/>
+      <enumerator name="q3plusQ4"/>
+      <enumerator name="quadrant1"/>
+      <enumerator name="quadrant2"/>
+      <enumerator name="quadrant3"/>
+      <enumerator name="quadrant4"/>
+      <enumerator name="reverse"/>
+      <enumerator name="total"/>
+      <enumerator name="totalByPhase"/>
+    </enum> 
+    <enum name="PhaseCodeKind">
+      <enumerator name="A"/>
+      <enumerator name="AB"/>
+      <enumerator name="ABC"/>
+      <enumerator name="ABCN"/>
+      <enumerator name="ABN"/>
+      <enumerator name="AC"/>
+      <enumerator name="ACN"/>
+      <enumerator name="AN"/>
+      <enumerator name="B"/>
+      <enumerator name="BC"/>
+      <enumerator name="BCN"/>
+      <enumerator name="BN"/>
+      <enumerator name="C"/>
+      <enumerator name="CN"/>
+      <enumerator name="N"/>
+      <enumerator name="noPhase"/>
+      <enumerator name="s1"/>
+      <enumerator name="s12"/>
+      <enumerator name="s12N"/>
+      <enumerator name="s1N"/>
+      <enumerator name="s2"/>
+      <enumerator name="s2N"/>
+    </enum> 
+    <struct name= "IdentifiedObject" topLevel="false">
+      <member name="mRID" id="0" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::UuidType"/>
+      <member name="description" id="1" type="string"/>
+      <member name="name" id="2" type="string"/>
+    </struct>
+    <struct name= "Container" topLevel="false">
+      <member name="logicalDeviceID" id="0" type="string" key="true"/>
+      <member name="timestamp" id="1" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::DateTimeType"/>
+    </struct>
+    <struct name= "ActivePower" topLevel="false">
+      <member name="multiplier" id="0" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::UnitMultiplierKind"/>
+      <member name="unit" id="1" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::UnitSymbolKind"/>
+      <member name="value" id="2" type="float"/>
+    </struct>
+    <struct name= "BasicIntervalSchedule" topLevel="false">
+      <member name="startTime" id="0" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::DateTimeType"/>
+      <member name="value1Multiplier" id="1" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::UnitMultiplierKind"/>
+      <member name="value1Unit" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::UnitSymbolKind"/>
+      <member name="value2Multiplier" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::UnitMultiplierKind"/>
+      <member name="value2Unit" id="4" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::UnitSymbolKind"/>
+    </struct>
+    <struct name= "DateTimeInterval" topLevel="false">
+      <member name="end" id="0" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::DateTimeType"/>
+      <member name="start" id="1" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::DateTimeType"/>
+    </struct>
+    <struct name= "SetPoint" topLevel="false">
+      <member name="controlType" id="0" type="string"/>
+      <member name="multiplier" id="1" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::UnitMultiplierKind"/>
+      <member name="unit" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::UnitSymbolKind"/>
+      <member name="value" id="3" type="float"/>
+    </struct>
+    <struct name= "ReadingType" topLevel="false">
+      <member name="multiplier" id="0" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::UnitMultiplierKind"/>
+      <member name="name" id="1" type="string"/>
+      <member name="unit" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::UnitSymbolKind"/>
+      <member name="flowDirection" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::FlowDirectionKind"/>
+      <member name="phases" id="4" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::PhaseCodeKind"/>
+    </struct>
+    <struct name= "Reading" topLevel="false">
+      <member name="source" id="0" type="string"/>
+      <member name="value" id="1" type="float"/>
+      <member name="qualityFlag" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::HexBinary16Type"/>
+      <member name="readingType" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::ReadingType"/>
+      <member name="timePeriod" id="4" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::DateTimeInterval"/>
+    </struct>
+    <enum name="CurveStyleKind">
+      <enumerator name="constantYValue"/>
+      <enumerator name="straightLineYValues"/>
+    </enum> 
+    <struct name= "CurveData" topLevel="false">
+      <member name="xvalue" id="0" type="float"/>
+      <member name="y1value" id="1" type="float"/>
+      <member name="y2value" id="2" type="float"/>
+      <member name="y3value" id="3" type="float"/>
+    </struct>
+    <const name="MaxLengthCurveData" type="unsignedLong" value="100"/>
+    <typedef name="SequenceOfCurveData" sequenceMaxLength="openfmb::commonmodule::MaxLengthCurveData" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::CurveData"/>
+    <struct name= "Curve" baseType="openfmb::commonmodule::IdentifiedObject" topLevel="false">
+      <member name="curveStyle" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::CurveStyleKind"/>
+      <member name="xMultiplier" id="4" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::UnitMultiplierKind"/>
+      <member name="xUnit" id="5" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::UnitSymbolKind"/>
+      <member name="y1Multiplier" id="6" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::UnitMultiplierKind"/>
+      <member name="y1Unit" id="7" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::UnitSymbolKind"/>
+      <member name="y2Multiplier" id="8" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::UnitMultiplierKind"/>
+      <member name="y2Unit" id="9" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::UnitSymbolKind"/>
+      <member name="y3Multiplier" id="10" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::UnitMultiplierKind"/>
+      <member name="y3Unit" id="11" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::UnitSymbolKind"/>
+      <member name="curveData" id="12" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::SequenceOfCurveData"/>
+    </struct>
+    <struct name= "EndDeviceControlType" topLevel="false">
+      <member name="action" id="0" type="string"/>
+      <member name="type" id="1" type="string"/>
+    </struct>
+    <const name="MaxLengthEndDeviceControlSetPoints" type="unsignedLong" value="100"/>
+    <typedef name="SequenceOfEndDeviceControlSetPoints" sequenceMaxLength="openfmb::commonmodule::MaxLengthEndDeviceControlSetPoints" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::SetPoint"/>
+    <struct name= "EndDeviceControl" topLevel="false">
+      <member name="issueID" id="0" type="string"/>
+      <member name="name" id="1" type="string"/>
+      <member name="endDeviceControlType" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::EndDeviceControlType"/>
+      <member name="scheduledInterval" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::DateTimeInterval"/>
+      <member name="setPoints" id="4" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::SequenceOfEndDeviceControlSetPoints"/>
+    </struct>
+    <struct name= "Event" baseType="openfmb::commonmodule::IdentifiedObject" topLevel="false">
+      <member name="timestamp" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::DateTimeType"/>
+      <member name="type" id="4" type="string"/>
+      <member name="value" id="5" type="string"/>
+    </struct>
+    <struct name= "PowerSystemResource" baseType="openfmb::commonmodule::IdentifiedObject" topLevel="false">
+      <member name="__dummy_prevent_empty_class" id="3" type="octet"/>
+    </struct>
+    <struct name= "Meter" baseType="openfmb::commonmodule::IdentifiedObject" topLevel="false">
+      <member name="powerSystemResource" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::PowerSystemResource"/>
+    </struct>
+    <struct name= "IrregularTimePoint" topLevel="false">
+      <member name="value1" id="0" type="float"/>
+      <member name="value2" id="1" type="float"/>
+    </struct>
+    <const name="MaxLengthForecastScheduleIrregularTimePoints" type="unsignedLong" value="100"/>
+    <typedef name="SequenceOfForecastScheduleIrregularTimePoints" sequenceMaxLength="openfmb::commonmodule::MaxLengthForecastScheduleIrregularTimePoints" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::IrregularTimePoint"/>
+    <struct name= "ForecastSchedule" baseType="openfmb::commonmodule::BasicIntervalSchedule" topLevel="false">
+      <member name="version" id="5" type="string"/>
+      <member name="versionDateTime" id="6" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::DateTimeType"/>
+      <member name="irregularTimePoints" id="7" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::SequenceOfForecastScheduleIrregularTimePoints"/>
+    </struct>
+    <struct name= "Status" topLevel="false">
+      <member name="timestamp" id="0" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::DateTimeType"/>
+      <member name="value" id="1" type="string"/>
+      <member name="qualityFlag" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::HexBinary16Type"/>
+    </struct>
+    <struct name= "StringMeasurementValue" topLevel="false">
+      <member name="value" id="0" type="string"/>
+      <member name="timestamp" id="1" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::DateTimeType"/>
+      <member name="qualityFlag" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::HexBinary16Type"/>
+      <member name="source" id="3" type="string"/>
+    </struct>
+    <struct name= "StringMeasurement" topLevel="false">
+      <member name="mRID" id="0" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::UuidType"/>
+      <member name="description" id="1" type="string"/>
+      <member name="measurementType" id="2" type="string"/>
+      <member name="name" id="3" type="string"/>
+      <member name="phases" id="4" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::PhaseCodeKind"/>
+      <member name="unit" id="5" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::UnitSymbolKind"/>
+      <member name="multiplier" id="6" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::UnitMultiplierKind"/>
+      <member name="value" id="7" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::StringMeasurementValue"/>
+    </struct>
+    <const name="MaxLengthStringMeasurements" type="unsignedLong" value="100"/>
+    <typedef name="SequenceOfStringMeasurements" sequenceMaxLength="openfmb::commonmodule::MaxLengthStringMeasurements" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::StringMeasurement"/>
+    <enum name="InterTieDirectionKind">
+      <enumerator name="E"/>
+      <enumerator name="I"/>
+      <enumerator name="NETZERO"/>
+    </enum> 
+    <enum name="EnergyProductTypeKind">
+      <enumerator name="DYN"/>
+      <enumerator name="FIRM"/>
+      <enumerator name="NFRM"/>
+      <enumerator name="WHL"/>
+    </enum> 
+    <enum name="ExecutionTypeKind">
+      <enumerator name="DA"/>
+      <enumerator name="HASP"/>
+      <enumerator name="RTD"/>
+      <enumerator name="RTPD"/>
+    </enum> 
+    <enum name="MarketProductTypeKind">
+      <enumerator name="EN"/>
+      <enumerator name="LFU"/>
+      <enumerator name="NR"/>
+      <enumerator name="RC"/>
+      <enumerator name="RD"/>
+      <enumerator name="REG"/>
+      <enumerator name="RU"/>
+      <enumerator name="SR"/>
+    </enum> 
+    <enum name="MarketTypeKind">
+      <enumerator name="DAM"/>
+      <enumerator name="HAM"/>
+      <enumerator name="RTM"/>
+      <enumerator name="RUC"/>
+    </enum> 
+    <enum name="SwitchStatusKind">
+      <enumerator name="Closed"/>
+      <enumerator name="Open"/>
+    </enum> 
+  </module>
+</module>
+</types>

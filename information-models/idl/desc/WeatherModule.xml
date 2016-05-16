@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<types xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="/home/devans/rti/rti_connext_dds-5.2.0/bin/../resource/app/app_support/rtiddsgen/schema/rti_dds_topic_types.xsd">
+<include file="CommonModule.xml"/>
+<module name="openfmb">
+  <module name="weathermodule">
+    <struct name= "HumidityData" topLevel="false">
+      <member name="timestamp" id="0" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::DateTimeType"/>
+      <member name="value" id="1" type="float"/>
+    </struct>
+    <const name="MaxLengthHumidityData" type="unsignedLong" value="100"/>
+    <typedef name="SequenceOfHumidityData" sequenceMaxLength="openfmb::weathermodule::MaxLengthHumidityData" type="nonBasic"  nonBasicTypeName= "openfmb::weathermodule::HumidityData"/>
+    <struct name= "Humidity" topLevel="false">
+      <member name="unit" id="0" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::UnitSymbolKind"/>
+      <member name="humidityData" id="1" type="nonBasic"  nonBasicTypeName= "openfmb::weathermodule::SequenceOfHumidityData"/>
+    </struct>
+    <struct name= "SunRadiationData" topLevel="false">
+      <member name="timestamp" id="0" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::DateTimeType"/>
+      <member name="value" id="1" type="float"/>
+    </struct>
+    <const name="MaxLengthSunRadiationData" type="unsignedLong" value="100"/>
+    <typedef name="SequenceOfSunRadiationData" sequenceMaxLength="openfmb::weathermodule::MaxLengthSunRadiationData" type="nonBasic"  nonBasicTypeName= "openfmb::weathermodule::SunRadiationData"/>
+    <struct name= "SunRadiation" topLevel="false">
+      <member name="multiplier" id="0" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::UnitMultiplierKind"/>
+      <member name="unit" id="1" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::UnitSymbolKind"/>
+      <member name="sunRadiationData" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::weathermodule::SequenceOfSunRadiationData"/>
+    </struct>
+    <struct name= "TemperatureData" topLevel="false">
+      <member name="timestamp" id="0" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::DateTimeType"/>
+      <member name="value" id="1" type="float"/>
+    </struct>
+    <const name="MaxLengthTemperatureData" type="unsignedLong" value="100"/>
+    <typedef name="SequenceOfTemperatureData" sequenceMaxLength="openfmb::weathermodule::MaxLengthTemperatureData" type="nonBasic"  nonBasicTypeName= "openfmb::weathermodule::TemperatureData"/>
+    <struct name= "Temperature" topLevel="false">
+      <member name="unit" id="0" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::UnitSymbolKind"/>
+      <member name="temperatureData" id="1" type="nonBasic"  nonBasicTypeName= "openfmb::weathermodule::SequenceOfTemperatureData"/>
+    </struct>
+    <struct name= "WindData" topLevel="false">
+      <member name="timestamp" id="0" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::DateTimeType"/>
+      <member name="windDirection" id="1" type="float"/>
+      <member name="windSpeed" id="2" type="float"/>
+    </struct>
+    <const name="MaxLengthWindData" type="unsignedLong" value="100"/>
+    <typedef name="SequenceOfWindData" sequenceMaxLength="openfmb::weathermodule::MaxLengthWindData" type="nonBasic"  nonBasicTypeName= "openfmb::weathermodule::WindData"/>
+    <struct name= "Wind" topLevel="false">
+      <member name="directionUnit" id="0" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::UnitSymbolKind"/>
+      <member name="speedUnit" id="1" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::UnitSymbolKind"/>
+      <member name="windData" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::weathermodule::SequenceOfWindData"/>
+    </struct>
+    <struct name= "WeatherData" topLevel="false">
+      <member name="interval" id="0" type="string"/>
+      <member name="source" id="1" type="string"/>
+      <member name="version" id="2" type="string"/>
+      <member name="versionDateTime" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::DateTimeType"/>
+      <member name="humidity" id="4" type="nonBasic"  nonBasicTypeName= "openfmb::weathermodule::Humidity"/>
+      <member name="sunRadiation" id="5" type="nonBasic"  nonBasicTypeName= "openfmb::weathermodule::SunRadiation"/>
+      <member name="temperature" id="6" type="nonBasic"  nonBasicTypeName= "openfmb::weathermodule::Temperature"/>
+      <member name="wind" id="7" type="nonBasic"  nonBasicTypeName= "openfmb::weathermodule::Wind"/>
+    </struct>
+    <struct name= "WeatherDataProfile" baseType="openfmb::commonmodule::Container">
+      <member name="weatherData" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::weathermodule::WeatherData"/>
+    </struct>
+  </module>
+</module>
+</types>

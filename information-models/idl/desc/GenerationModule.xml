@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<types xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="/home/devans/rti/rti_connext_dds-5.2.0/bin/../resource/app/app_support/rtiddsgen/schema/rti_dds_topic_types.xsd">
+<include file="CommonModule.xml"/>
+<module name="openfmb">
+  <module name="generationmodule">
+    <struct name= "GeneratingUnit" baseType="openfmb::commonmodule::IdentifiedObject" topLevel="false">
+      <member name="maxOperatingP" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::ActivePower"/>
+    </struct>
+    <struct name= "GenerationControl" baseType="openfmb::commonmodule::EndDeviceControl" topLevel="false">
+      <member name="__dummy_prevent_empty_class" id="5" type="octet"/>
+    </struct>
+    <struct name= "GenerationControlProfile" baseType="openfmb::commonmodule::Container">
+      <member name="generatingUnit" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::generationmodule::GeneratingUnit"/>
+      <member name="generationControl" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::generationmodule::GenerationControl"/>
+    </struct>
+    <struct name= "GenerationStatus" baseType="openfmb::commonmodule::Status" topLevel="false">
+      <member name="isAutoOn" id="3" type="boolean"/>
+      <member name="isConnected" id="4" type="boolean"/>
+    </struct>
+    <struct name= "GenerationEventProfile" baseType="openfmb::commonmodule::Container">
+      <member name="generatingUnit" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::generationmodule::GeneratingUnit"/>
+      <member name="generationStatus" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::generationmodule::GenerationStatus"/>
+    </struct>
+    <struct name= "GenerationForecastProfile" baseType="openfmb::commonmodule::Container">
+      <member name="forecastSchedule" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::ForecastSchedule"/>
+      <member name="generatingUnit" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::generationmodule::GeneratingUnit"/>
+    </struct>
+    <const name="MaxLengthGenerationReadings" type="unsignedLong" value="100"/>
+    <typedef name="SequenceOfGenerationReadings" sequenceMaxLength="openfmb::generationmodule::MaxLengthGenerationReadings" type="nonBasic"  nonBasicTypeName= "openfmb::commonmodule::Reading"/>
+    <struct name= "GenerationReadingProfile" baseType="openfmb::commonmodule::Container">
+      <member name="generatingUnit" id="2" type="nonBasic"  nonBasicTypeName= "openfmb::generationmodule::GeneratingUnit"/>
+      <member name="readings" id="3" type="nonBasic"  nonBasicTypeName= "openfmb::generationmodule::SequenceOfGenerationReadings"/>
+    </struct>
+  </module>
+</module>
+</types>
