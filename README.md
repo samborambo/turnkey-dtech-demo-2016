@@ -7,7 +7,7 @@ This repository is for the code base of the simplified demo.   This site contain
 
 All code leverages various open source licenses, please refer to the specific module for its LICENSE.txt file.
 
-For futher information request or reporting issues please submit an [New Issue](https://github.com/openfmb/dtech-demo-2016/issues/new)
+For futher information requests or for reporting issues please submit an [New Issue](https://github.com/openfmb/dtech-demo-2016/issues/new)
 
 
 
