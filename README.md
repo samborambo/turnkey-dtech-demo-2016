@@ -14,7 +14,7 @@ For futher information requests or for reporting issues please submit an [New Is
 
  + openfmb-simulators - https://github.com/openfmb/openfmb-simulators
  + openfmb-hmi - https://github.com/openfmb/openfmb-hmi
- + openfmb-adapters](https://github.com/openfmb/openfmb-adapters
+ + openfmb-adapters https://github.com/openfmb/openfmb-adapters
  + DNP3 - https://github.com/gec/dnp3
  + Modbus - https://github.com/gec/modbus
 
@@ -22,18 +22,18 @@ For futher information requests or for reporting issues please submit an [New Is
 
 Last update: July 28th, 2016
 
-This is the interm package for the simulation after further testing the final package will be released and instructions will be incorporated into the wiki.
+This is the interm package for the simulation and after further testing the final package will be released.  The wiki will then be upgraded.
 
 
 Requirements:
-Follow the dependencies installation from the ![wiki](https://github.com/openfmb/dtech-demo-2016/wiki)
+Follow the dependencies installation from the [wiki](https://github.com/openfmb/dtech-demo-2016/wiki)
 
 You will need to setup your workspace. The following are recommendation.
 ```
 mkdir ~/workspace
 mkdir ~/workspace/openfmb
 ```
-Download the latest ![demo package](https://github.com/openfmb/dtech-demo-2016/releases/download/v1.0_beta/demo_stage_7282016.tar.gz) 
+Download the latest [demo package](https://github.com/openfmb/dtech-demo-2016/releases/download/v1.0_beta/demo_stage_7282016.tar.gz) 
 
 Untar the demo_stage_<date>.tar.gz in the openfmb directory
  ```
