@@ -12,11 +12,11 @@ For futher information requests or for reporting issues please submit an [New Is
 
 # Demo Project Repo Dependencies
 
- ![openfmb-simulators](https://github.com/openfmb/openfmb-simulators)
- ![openfmb-hmi](https://github.com/openfmb/openfmb-hmi)
- ![openfmb-adapters](https://github.com/openfmb/openfmb-adapters)
- ![DNP3](https://github.com/gec/dnp3)
- ![GEC modbus](https://github.com/gec/modbus)
+ + openfmb-simulators - https://github.com/openfmb/openfmb-simulators
+ + openfmb-hmi - https://github.com/openfmb/openfmb-hmi
+ + openfmb-adapters](https://github.com/openfmb/openfmb-adapters
+ + DNP3 - https://github.com/gec/dnp3
+ + GEC Modbus - https://github.com/gec/modbus
 
 
 
