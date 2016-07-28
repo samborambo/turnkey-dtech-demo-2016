@@ -1,4 +1,4 @@
-# Simplified DTech 2016 Repository #
+# Simplified DTech 2016 Repository 
 Welcome to the OpenFMB Repo for the simplified demonstration from 2016 DistribuTECH Conference
 
 In the original demonstration on the Distributech floor, multiple vendors were communicating over wireless to simulate a small microgrid system with actually resource controllers.  
@@ -10,20 +10,17 @@ All code leverages various open source licenses, please refer to the specific mo
 For futher information requests or for reporting issues please submit an [New Issue](https://github.com/openfmb/dtech-demo-2016/issues/new)
 
 
-# Project Layout #
+# Demo Project Repo Dependencies
 
-+ adapter- xml
-+ configuration
-+ dnp3-adapter
-+ dnp3-to-mqtt
-+ mapping
-+ modbus adapter
-+ mqtt adapter
-+ xml-bindings
-+ xml-data
-+ APACHE_FILE_HEADER
-+ mqtt properties
-+ pom.xml
+https://github.com/openfmb/openfmb-simulators
+https://github.com/openfmb/openfmb-hmi
+https://github.com/openfmb/openfmb-adapters
+https://github.com/gec/dnp
+https://github.com/gec/modbus
+
+
+
+
 
 
 
