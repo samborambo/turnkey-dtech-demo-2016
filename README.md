@@ -16,7 +16,7 @@ For futher information requests or for reporting issues please submit an [New Is
  + openfmb-hmi - https://github.com/openfmb/openfmb-hmi
  + openfmb-adapters](https://github.com/openfmb/openfmb-adapters
  + DNP3 - https://github.com/gec/dnp3
- + GEC Modbus - https://github.com/gec/modbus
+ + Modbus - https://github.com/gec/modbus
 
 
 
