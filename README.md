@@ -1,9 +1,9 @@
 # Simplified DTech 2016 Repository 
-Welcome to the OpenFMB Repo for the simplified demonstration from 2016 DistribuTECH Conference
+Welcome to the OpenFMB Repo for a simplified microgrid demonstration from 2016 DistribuTECH Conference
 
-In the original demonstration on the Distributech floor, multiple vendors were communicating over wireless to simulate a small microgrid system with actually resource controllers.  
+In the original demonstration on the Distributech floor, multiple vendors were connected over wireless communications to simulate a small microgrid system with actual resource controllers.  
 
-This repository is for the code base of the simplified demo.   This site contains a [WIKI](https://github.com/openfmb/dtech-demo-2016/wiki) for deploying the demo. 
+This repository contains the code base of the simplified demo.   This site contains a [WIKI](https://github.com/openfmb/dtech-demo-2016/wiki) for deploying the demo system. 
 
 All code leverages various open source licenses, please refer to the specific module for its LICENSE.txt file.
 
@@ -20,27 +20,27 @@ For futher information requests or for reporting issues please submit an [New Is
 
 # Beta Testing Package
 
-Last update: July 28th, 2016
+Last update: July 31, 2016
 
-This is the interm package for the simulation and after further testing the final package will be released.  The wiki will then be upgraded.
+This is an interim package for the simulation and after further testing the final package will be released.  The wiki will then be upgraded.
 
 
 Requirements:
 Follow the dependencies installation from the [wiki](https://github.com/openfmb/dtech-demo-2016/wiki)
 
-You will need to setup your workspace. The following are recommendation.
+You will need to setup your workspace. The following are recommendations:
 ```
 mkdir ~/workspace
 mkdir ~/workspace/openfmb
 ```
 Download the latest [demo package](https://github.com/openfmb/dtech-demo-2016/releases/download/v1.0_beta/demo_stage_7282016.tar.gz) 
 
-Untar the demo_stage_<date>.tar.gz in the openfmb directory
+Untar the demo_stage_<date>.tar.gz in the openfmb directory.
  ```
 tar -xzf demo_stage_<date>.tar.gz
 ```
 
-The wiki information on building the code and setting up the work space manually will provide general descriptions of files and startup procedures.
+The wiki information on building the code and setting up the workspace manually will provide general descriptions of files and startup procedures.
 
 To get going fast - go to the stage directory and either one of the following.
 
@@ -53,9 +53,9 @@ To get going fast - go to the stage directory and either one of the following.
 NOTES:
 
 Remember that all .sh shell script need the executable bit   -> chmod +x <script>.sh
-We have included a MQTT-SPY in the distribution for ease
-We would expect you to install chrome per instructions in the wiki for the web page to automatically startup
-We have a shell script called fetch.sh that will grab the new target files is you choose to build the system from the code base.
+We have included a MQTT-SPY in the distribution for ease in observing publish and subscribe traffic.
+We would expect you to install chrome per instructions in the wiki for the web page to automatically startup.
+We have a shell script called fetch.sh that will grab the new target files you choose for building the system from the code base.
 
 
 
