@@ -1,9 +1,9 @@
 # Simplified DTech 2016 Repository 
-Welcome to the OpenFMB Repo for a simplified microgrid demonstration from 2016 DistribuTECH Conference
+Welcome to the OpenFMB Repo for a simplified microgrid demonstration from the 2016 DistribuTECH Conference.
 
 In the original demonstration on the Distributech floor, multiple vendors were connected over wireless communications to simulate a small microgrid system with actual resource controllers.  
 
-This repository contains the code base of the simplified demo.   This site contains a [WIKI](https://github.com/openfmb/dtech-demo-2016/wiki) for deploying the demo system. 
+This repository contains the code base of the simplified demo. This demonstration contains OpenFMB CIM data structures and is based on the MQTT publish and subscribe application layer protocol.  This site contains a [WIKI](https://github.com/openfmb/dtech-demo-2016/wiki) for deploying the demo system. 
 
 All code leverages various open source licenses, please refer to the specific module for its LICENSE.txt file.
 
