@@ -33,7 +33,7 @@ You will need to setup your workspace. The following are recommendations:
 mkdir ~/workspace
 mkdir ~/workspace/openfmb
 ```
-Download the latest [demo package](https://github.com/openfmb/dtech-demo-2016/releases/download/v1.0_beta/demo_stage_7282016.tar.gz) 
+Download the latest demo package from the [release tab] (https://github.com/openfmb/dtech-demo-2016/releases)
 
 Untar the demo_stage_<date>.tar.gz in the openfmb directory.
  ```
