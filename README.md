@@ -20,7 +20,7 @@ For futher information requests or for reporting issues please submit an [New Is
 
 # Beta Testing Package
 
-Last update: July 31, 2016
+Last update: August 3, 2016
 
 This is an interim package for the simulation and after further testing the final package will be released.  The wiki will then be upgraded.
 
