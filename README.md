@@ -15,47 +15,15 @@ For futher information requests or for reporting issues please submit an [New Is
  + openfmb-simulators - https://github.com/openfmb/openfmb-simulators
  + openfmb-hmi - https://github.com/openfmb/openfmb-hmi
  + openfmb-adapters https://github.com/openfmb/openfmb-adapters
+ +  load simulator repo to be added
  + DNP3 - https://github.com/gec/dnp3
  + Modbus - https://github.com/gec/modbus
-
+  
 # Beta Testing Package
 
-Last update: August 3, 2016
+August 5th, 2016
 
-This is an interim package for the simulation and after further testing the final package will be released.  The wiki will then be upgraded.
-
-
-Requirements:
-Follow the dependencies installation from the [wiki](https://github.com/openfmb/dtech-demo-2016/wiki)
-
-You will need to setup your workspace. The following are recommendations:
-```
-mkdir ~/workspace
-mkdir ~/workspace/openfmb
-```
-Download the latest demo package from the [release tab] (https://github.com/openfmb/dtech-demo-2016/releases)
-
-Untar the demo_stage_<date>.tar.gz in the openfmb directory.
- ```
-tar -xzf demo_stage_<date>.tar.gz
-```
-
-The wiki information on building the code and setting up the workspace manually will provide general descriptions of files and startup procedures.
-
-To get going fast - go to the stage directory and either one of the following.
-
-```
->./simgo.sh
->./simgoDNP3.sh
-```
-
-
-NOTES:
-
-Remember that all .sh shell script need the executable bit   -> chmod +x <script>.sh
-We have included a MQTT-SPY in the distribution for ease in observing publish and subscribe traffic.
-We would expect you to install chrome per instructions in the wiki for the web page to automatically startup.
-We have a shell script called fetch.sh that will grab the new target files you choose for building the system from the code base.
+Access the [wiki](https://github.com/openfmb/dtech-demo-2016/wiki) to start.
 
 
 
