@@ -1,4 +1,4 @@
-# Simplified DTech 2016 Repository 
+# Simplified OpenFMB Demonstration From 2016 DistribuTECH Conference 
 Welcome to the OpenFMB Repo for a simplified microgrid demonstration from the 2016 DistribuTECH Conference.
 
 In the original demonstration on the Distributech floor, multiple vendors were connected over wireless communications to simulate a small microgrid system with actual resource controllers.  
