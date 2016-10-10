@@ -15,7 +15,8 @@ For futher information requests or for reporting issues please submit an [New Is
  + openfmb-simulators - https://github.com/openfmb/openfmb-simulators
  + openfmb-hmi - https://github.com/openfmb/openfmb-hmi
  + openfmb-adapters https://github.com/openfmb/openfmb-adapters
- +  load simulator repo to be added
+ + openfmb-common-mqtt https://github.com/openfmb/openfmb-common-mqtt
+ + openfmb-loadpublisher https://github.com/openfmb/openfmb-loadpublisher
  + DNP3 - https://github.com/gec/dnp3
  + Modbus - https://github.com/gec/modbus
   
@@ -25,8 +26,12 @@ August 5th, 2016
 
 Access the [wiki](https://github.com/openfmb/dtech-demo-2016/wiki) to start.
 
-# Latest Changes
+October 9, 2016
 
+Added the following repositories
+ + openfmb-common-mqtt https://github.com/openfmb/openfmb-common-mqtt
+ + openfmb-loadpublisher https://github.com/openfmb/openfmb-loadpublisher
+ 
 
 
 
