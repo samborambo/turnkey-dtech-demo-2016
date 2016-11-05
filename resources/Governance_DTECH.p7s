@@ -1,0 +1,83 @@
+MIME-Version: 1.0
+Content-Type: multipart/signed; protocol="application/x-pkcs7-signature"; micalg="sha-256"; boundary="----B8C888679AFC631BC2D37CB225E7A7A7"
+
+This is an S/MIME signed message
+
+------B8C888679AFC631BC2D37CB225E7A7A7
+Content-Type: text/plain
+
+<?xml version="1.0" encoding="UTF-8"?>
+<dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://community.rti.com/schema/5.2.5/dds_security_governance.xsd">
+
+    <!-- Differences from DDS Security specification 
+     ENCRYPT only encrypts. It doesn't sign.
+
+     SIGN and NONE are the only supported rtps_protection_kinds.
+     ENCRYPT and NONE are the only supported non-rtps_protection_kinds.
+     metadata_protection_kind applies to both metadata and data.
+
+     DataWriter with metadata_protection_kind = NONE and
+     data_protection_kind = NONE is not compatible with DataReader with
+     metadata_protection_kind != NONE or data_protection_kind != NONE.
+
+     discovery_protection_kind is not supported. If a topic sets
+     enable_discovery_protection = TRUE, then its discovery is encrypted.
+     -->
+    <domain_access_rules>
+        <domain_rule>
+            <domains>
+                <id_range>
+                    <min>0</min>
+                </id_range>
+            </domains>
+            <allow_unauthenticated_participants>TRUE</allow_unauthenticated_participants>
+            <enable_join_access_control>FALSE</enable_join_access_control>
+            <discovery_protection_kind>NONE</discovery_protection_kind>
+            <liveliness_protection_kind>NONE</liveliness_protection_kind>
+            <rtps_protection_kind>NONE</rtps_protection_kind>
+            <topic_access_rules>
+                <topic_rule>
+                    <topic_expression>openfmb_batterymodule_BatteryEventProfile</topic_expression>
+                    <enable_discovery_protection>TRUE</enable_discovery_protection>
+                    <enable_read_access_control>TRUE</enable_read_access_control>
+                    <enable_write_access_control>TRUE</enable_write_access_control>
+                    <metadata_protection_kind>ENCRYPT</metadata_protection_kind>
+                    <data_protection_kind>ENCRYPT</data_protection_kind>
+                </topic_rule>
+            </topic_access_rules>
+        </domain_rule>
+    </domain_access_rules>
+</dds>
+
+------B8C888679AFC631BC2D37CB225E7A7A7
+Content-Type: application/x-pkcs7-signature; name="smime.p7s"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="smime.p7s"
+
+MIIELAYJKoZIhvcNAQcCoIIEHTCCBBkCAQExDzANBglghkgBZQMEAgEFADALBgkq
+hkiG9w0BBwGgggIFMIICATCCAagCCQCREgOOkXPjmzAKBggqhkjOPQQDAjCBiDEL
+MAkGA1UEBhMCVVMxCzAJBgNVBAgMAk5DMRIwEAYDVQQHDAlDaGFybG90dGUxFDAS
+BgNVBAoMC0R1a2UgRW5lcmd5MRMwEQYDVQQDDApFVE8gRERTIENBMS0wKwYJKoZI
+hvcNAQkBFh5kd2F5bmUuYnJhZGxleUBkdWtlLWVuZXJneS5jb20wHhcNMTYxMDA1
+MTQ1MjAwWhcNMjYxMDAzMTQ1MjAwWjCBiDELMAkGA1UEBhMCVVMxCzAJBgNVBAgM
+Ak5DMRIwEAYDVQQHDAlDaGFybG90dGUxFDASBgNVBAoMC0R1a2UgRW5lcmd5MRMw
+EQYDVQQDDApFVE8gRERTIENBMS0wKwYJKoZIhvcNAQkBFh5kd2F5bmUuYnJhZGxl
+eUBkdWtlLWVuZXJneS5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASet8HB
+HXZSr4Zi+NI1jglUvO2fQtYDeg8jBJDitsyBZz58BlXCXVRCHG6bl43C+Zcu6mDT
+yrTNGKzPUImXDiakMAoGCCqGSM49BAMCA0cAMEQCIEQkFsUmmHER9BIl6akFkdYk
+fQJtmW3xNk4uslV6AGNsAiAq0kaY7G1I0oJtv+9QhnIPH3aScOyyqdz25mq+nwyg
+yjGCAeswggHnAgEBMIGWMIGIMQswCQYDVQQGEwJVUzELMAkGA1UECAwCTkMxEjAQ
+BgNVBAcMCUNoYXJsb3R0ZTEUMBIGA1UECgwLRHVrZSBFbmVyZ3kxEzARBgNVBAMM
+CkVUTyBERFMgQ0ExLTArBgkqhkiG9w0BCQEWHmR3YXluZS5icmFkbGV5QGR1a2Ut
+ZW5lcmd5LmNvbQIJAJESA46Rc+ObMA0GCWCGSAFlAwQCAQUAoIHkMBgGCSqGSIb3
+DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTE2MTAwNTE3NDUyNVow
+LwYJKoZIhvcNAQkEMSIEILqKJwaNB1TIFvp2H6FqFhJvjObQh+uAlEmiEgVjNiu4
+MHkGCSqGSIb3DQEJDzFsMGowCwYJYIZIAWUDBAEqMAsGCWCGSAFlAwQBFjALBglg
+hkgBZQMEAQIwCgYIKoZIhvcNAwcwDgYIKoZIhvcNAwICAgCAMA0GCCqGSIb3DQMC
+AgFAMAcGBSsOAwIHMA0GCCqGSIb3DQMCAgEoMAoGCCqGSM49BAMCBEcwRQIhAL4Q
+xagzsVJjzHFUvzQeqO879WpJCuMivTcV29y6mqwdAiAkfg6fsgNjpDHs1DKo7nOB
+W++kFwbKoTKzIXtMZOxmwQ==
+
+------B8C888679AFC631BC2D37CB225E7A7A7--
+

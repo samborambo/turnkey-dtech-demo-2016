@@ -1,0 +1,7 @@
+topic openfmb/#
+
+user LoadSim
+topic read openfmb/#
+topic write openfmb/resourcemodule/ResourceReadingProfile/DEMO.MGRID.RESOURCE.1
+
+
